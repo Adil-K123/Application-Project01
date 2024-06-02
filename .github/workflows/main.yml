@@ -23,6 +23,7 @@ jobs:
         touch /home/runner/.ssh/config
         touch /home/runner/.ssh/id_rsa
         echo -e "${{ secrets.ANSIBLE_SSH_KEY }}" > /home/runner/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         git clone https://github.com/Adil-K123/Infra-as-code-Project-01.git /tmp/infra-repo
         git clone https://github.com/Adil-K123/Application-Project01.git /tmp/code-repo/Application-Project01
         cd /tmp/infra-repo/ansible
