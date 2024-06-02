@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn instance for a simple test app
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/Application-Project01
+ExecStart=/home/ubuntu/Application-Project01/venv/bin/gunicorn -b localhost:8000 my_app:app
+Restart=always
+[Install]
+WantedBy=multi-user.target
